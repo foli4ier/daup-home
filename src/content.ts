@@ -52,39 +52,6 @@ export const walkthroughs: Walkthrough[] = [
     ],
   },
   {
-    slug: "invite",
-    path: "/invite",
-    kicker: "DOCS • STAFF",
-    title: "Invite tonight’s floor",
-    sub: "Six steps. Same as a real shift.",
-    steps: [
-      {
-        title: "You don’t make an account here",
-        body: "This website is public. Staff never log in on daup.co.za. You don’t sign up on this page.",
-      },
-      {
-        title: "The owner opens the hub",
-        body: "Invites start in your hub — the owner’s place. Staff are not a new business.",
-      },
-      {
-        title: "Send it on WhatsApp",
-        body: "Pick tonight’s floor. Send the invite. WhatsApp carries it to their phone.",
-      },
-      {
-        title: "That message is the login",
-        body: "Open the WhatsApp your owner sent. That message is your login. No extra password on this site.",
-      },
-      {
-        title: "Tap, and they’re on the floor",
-        body: "One tap. They’re in the eatery app, on tonight’s shift, on their own phone.",
-      },
-      {
-        title: "Don’t send them to the hub",
-        body: "Do not send staff to app.daup.co.za as a new node. The hub is for the owner. Staff join with a WhatsApp tap.",
-      },
-    ],
-  },
-  {
     slug: "set-up-eatery",
     path: "/docs/hub/set-up-eatery",
     kicker: "DOCS • HUB",
@@ -127,7 +94,7 @@ export const starters = [
   },
   {
     title: "Invite tonight’s floor",
-    to: "/invite",
+    to: "/docs/hub/set-up-eatery",
     kind: "people" as const,
   },
   {

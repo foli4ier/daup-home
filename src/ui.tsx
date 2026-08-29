@@ -186,7 +186,7 @@ export function LiveCards({ expanded = false }: { expanded?: boolean }) {
             <p>
               <Link to="/docs/eatery/tuesday-lunch">Tuesday lunch service</Link>
               {" · "}
-              <Link to="/invite">Invite tonight’s floor</Link>
+              <Link to="/docs/hub/set-up-eatery">Invite tonight’s floor</Link>
             </p>
           </div>
         ) : null}
@@ -217,7 +217,7 @@ export function LiveCards({ expanded = false }: { expanded?: boolean }) {
             <p>
               <Link to="/docs/hub/set-up-eatery">Set up your eatery</Link>
               {" · "}
-              <Link to="/invite">Invite tonight’s floor</Link>
+              <Link to="/docs/hub/set-up-eatery">Invite tonight’s floor</Link>
             </p>
           </div>
         ) : null}
@@ -253,7 +253,7 @@ function StarterLinks() {
   return (
     <div className="starters">
       {starters.map((item) => (
-        <Link className="starter" to={item.to} key={item.to}>
+        <Link className="starter" to={item.to} key={item.title}>
           {item.kind === "fork" ? (
             <IconFork />
           ) : item.kind === "people" ? (

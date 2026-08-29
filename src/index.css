@@ -698,6 +698,38 @@ img {
   display: none;
 }
 
+.wrap.page.invite {
+  max-width: 640px;
+  padding-bottom: 80px;
+}
+
+.invite h1 {
+  font-size: clamp(2.7rem, 8vw, 4.15rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 8px 0 14px;
+}
+
+.invite .sub {
+  font-size: clamp(1.22rem, 3.2vw, 1.55rem);
+  font-weight: 650;
+  max-width: 28rem;
+}
+
+.invite-card {
+  gap: 18px;
+  padding: 28px;
+}
+
+.invite-card p {
+  font-size: 1.22rem;
+  line-height: 1.45;
+}
+
+.invite-quiet {
+  margin-top: 28px;
+}
+
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;

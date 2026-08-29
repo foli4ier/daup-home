@@ -196,8 +196,14 @@ function Walk({ doc }: { doc: Walkthrough }) {
   );
 }
 
+function walkthroughBySlug(slug: string) {
+  const doc = walkthroughs.find((item) => item.slug === slug);
+  if (!doc) throw new Error(`Missing walkthrough: ${slug}`);
+  return doc;
+}
+
 export function TuesdayPage() {
-  const doc = walkthroughs[0];
+  const doc = walkthroughBySlug("tuesday-lunch");
   return (
     <Shell>
       <Walk doc={doc} />
@@ -206,16 +212,43 @@ export function TuesdayPage() {
 }
 
 export function InvitePage() {
-  const doc = walkthroughs[1];
   return (
-    <Shell>
-      <Walk doc={doc} />
-    </Shell>
+    <>
+      <header>
+        <div className="wrap">
+          <nav className="site-nav" aria-label="Primary">
+            <Link className="logo" to="/">
+              DAUP
+            </Link>
+          </nav>
+        </div>
+      </header>
+      <div className="wrap page invite">
+        <Link className="back" to="/">
+          ‹ Home
+        </Link>
+        <h1 className="serif">You were invited</h1>
+        <p className="sub">You don’t make an account here.</p>
+        <article className="card invite-card">
+          <p>
+            This website is public. Open the WhatsApp your owner sent. That
+            message is your login.
+          </p>
+          <p>
+            You land on the floor for this eatery: tables, tickets, kitchen.
+          </p>
+          <p>Do not open the hub. That is for the owner.</p>
+        </article>
+        <p className="caption invite-quiet">
+          No WhatsApp yet? Ask your owner to send tonight’s invite.
+        </p>
+      </div>
+    </>
   );
 }
 
 export function SetupPage() {
-  const doc = walkthroughs[2];
+  const doc = walkthroughBySlug("set-up-eatery");
   return (
     <Shell>
       <Walk doc={doc} />
