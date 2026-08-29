@@ -6,16 +6,25 @@ This GitHub repository is the source for **Cloudflare Workers Builds**. The work
 
 ## Custom domains
 
-In the Cloudflare dashboard, attach:
+Attach **www.daup.co.za first**. Today the apex `daup.co.za` is still the Flutter PWA on Netlify, which is a SPA catch-all — it will swallow `/invite`, `/apps`, and `/docs` if you cut the apex over too soon.
 
-- daup.co.za (apex)
-- www.daup.co.za
+www must own real path routing for:
 
-Attaching the apex cuts over from the current Flutter PWA on Netlify. Do that only when this site is ready to be the public homepage.
+- /
+- /invite
+- /apps
+- /apps/eatery
+- /apps/hub
+- /docs
+- /docs/*
+
+The build writes an `index.html` under each of those directories in `dist/` so the edge serves a real file, not a Flutter rewrite. `wrangler.json` also sets `not_found_handling: single-page-application` as a fallback.
+
+Attach the apex `daup.co.za` only when this site is ready to replace the Flutter PWA. That cutover is a dashboard change, not a redirect on this repo.
 
 ## What this site is (and is not)
 
-- daup.co.za — public marketing, /apps, /docs, /invite
+- daup.co.za / www — public marketing, /apps, /docs, /invite
 - app.daup.co.za — owner hub (separate, secure). Log in happens there.
 - eatery.daup.co.za — live eatery floor app
 
@@ -25,7 +34,7 @@ Open eatery goes to https://eatery.daup.co.za/.
 
 Staff do not log in here. "I have a staff invite" stays on this host at /invite. The WhatsApp the owner sent is their login. Do not send staff to the hub as a new node.
 
-This site has no cookies, no /login, no /profile, and no vault.
+This site has no cookies, no /login, no /profile, and no vault. Public names are **Eatery** and **Your hub** only.
 
 ## Routes
 
@@ -45,4 +54,4 @@ Install dependencies, then run the Vite dev server or the production build (writ
 
 ## Deploy
 
-Cloudflare Workers Builds: connect this repo, production branch main. wrangler.json points assets at ./dist with not_found_handling: single-page-application so client routes work on the edge.
+Cloudflare Workers Builds: connect this repo, production branch main. wrangler.json points assets at ./dist with not_found_handling: single-page-application so unmatched paths still load the SPA.
