@@ -4,6 +4,14 @@ Public marketing site for **daup.co.za** — food, from the people who grow it t
 
 This GitHub repository is the source for **Cloudflare Workers Builds**. The worker serves the Vite dist/ folder as static assets (wrangler.json). Builds run on Cloudflare; do not commit node_modules.
 
+Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Do not redesign here.
+
+## How daup.co.za becomes this look
+
+The look Frans wants **is daup-www**. Connecting this Workers site to **daup.co.za** is how the public site becomes cream, terracotta, forest, Fraunces + DM Sans — not the Flutter neon console.
+
+Do **not** port the Flutter marketplace or wallet onto this repo. Do **not** rebuild Flutter. Apex cutover is a Cloudflare custom-domain attach of **this** project, not a theme skin of the Netlify PWA.
+
 ## Custom domains
 
 Attach **www.daup.co.za first**. Today the apex `daup.co.za` is still the Flutter PWA on Netlify, which is a SPA catch-all — it will swallow `/invite`, `/apps`, and `/docs` if you cut the apex over too soon.
