@@ -25,7 +25,7 @@ export function HomePage() {
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href={HUB}>
-              Start with your eatery
+              Log in ↗
             </a>
             <Link className="btn btn-ghost" to="/docs/eatery/tuesday-lunch">
               See how a shift works
