@@ -36,7 +36,7 @@ Attach the apex `daup.co.za` only when this site is ready to replace the Flutter
 - app.daup.co.za — owner hub (separate, secure). Log in happens there.
 - eatery.daup.co.za — live eatery floor app
 
-Log in, Start with your eatery, Open your hub, and Profile leave this origin and open https://app.daup.co.za/ (hub home, full navigation, never an iframe, no query paths, never auto-launch the eatery).
+Log in and Open your hub leave this origin and open https://app.daup.co.za/ (hub home, full navigation, never an iframe, no query paths, never auto-launch the eatery).
 
 Open eatery goes to https://eatery.daup.co.za/.
 
