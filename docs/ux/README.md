@@ -4,8 +4,8 @@ Reference frames for the www craft-bar home. Tokens stay on daup-theme (cream / 
 
 | File | Viewport | What to read |
 | --- | --- | --- |
-| `home-desktop.png` | 1440×900 | One Log in in the bar. Phone is small. Live now is raised (peach band), dense Open. actions. Your places empty. Coming Notify me. Owner / Staff door. |
-| `home-mobile.png` | 390×844 | Header is one row (~56px). Live now enters the first viewport. |
+| `home-desktop.png` | 1440×900 | Only header **Log in** is terracotta primary. Live **Open.** and Owner **Open your hub** are forest outline. Footer hub is quiet. Phone is small. Live now sits immediately under a tight hero. |
+| `home-mobile.png` | 390×844 | Header is one row (~56px). Hero cream is tight so Live now is immediate. Live cards are dense (inline Open., not tall slabs). |
 
 Capture after `npm run dev` or `npm run preview`:
 

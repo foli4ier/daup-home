@@ -160,6 +160,16 @@ ul {
   border-color: var(--ink);
 }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--forest);
+  border-color: var(--forest);
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
 .btn-ghost {
   background: var(--white);
   color: var(--terracotta);
@@ -172,21 +182,28 @@ ul {
 
 .btn-open,
 .btn-notify {
-  min-height: 44px;
-  padding: 0 16px;
+  min-height: 40px;
+  padding: 0 12px;
   flex: 0 0 auto;
+}
+
+.btn-open {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 0.88rem;
+  white-space: nowrap;
 }
 
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(160px, 0.45fr);
-  gap: 28px;
+  gap: 16px;
   align-items: center;
-  padding: 18px 0 20px;
+  padding: 8px 0 6px;
 }
 
 .hero h1 {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   font-size: clamp(1.7rem, 3.4vw, 2.55rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
@@ -416,7 +433,7 @@ ul {
 
 .live-band {
   background: var(--peach);
-  padding: 18px 0 22px;
+  padding: 10px 0 16px;
 }
 
 .places-band,
@@ -429,7 +446,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .kicker {
@@ -465,8 +482,8 @@ ul {
 }
 
 .live-card {
-  padding: 14px 16px 10px;
-  gap: 6px;
+  padding: 10px 14px 6px;
+  gap: 2px;
 }
 
 .live-row {
@@ -513,8 +530,8 @@ ul {
 .quiet-link {
   color: var(--muted);
   font-weight: 550;
-  font-size: 0.92rem;
-  min-height: 36px;
+  font-size: 0.88rem;
+  min-height: 28px;
   display: inline-flex;
   align-items: center;
 }
@@ -865,7 +882,8 @@ ul {
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 14px 0 12px;
+    gap: 0;
+    padding: 4px 0 2px;
   }
 
   .phone-col {
@@ -910,20 +928,48 @@ ul {
   }
 
   .hero h1 {
-    font-size: clamp(1.55rem, 7vw, 1.9rem);
+    font-size: clamp(1.45rem, 6.6vw, 1.75rem);
+    margin: 0 0 4px;
   }
 
   .hero .lede {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .live-band {
+    padding: 8px 0 12px;
+  }
+
+  .live-stack {
+    gap: 8px;
+  }
+
+  .live-card {
+    padding: 8px 10px 4px;
+    gap: 0;
   }
 
   .live-row {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 8px;
+    align-items: center;
   }
 
-  .live-row .btn-open {
-    grid-column: 2;
-    justify-self: start;
+  .live-copy p {
+    font-size: 0.82rem;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .live-copy h3 {
+    font-size: 1.02rem;
+  }
+
+  .walk-link {
+    min-height: 24px;
+    font-size: 0.8rem;
   }
 
   .coming-row {

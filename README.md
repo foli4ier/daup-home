@@ -6,7 +6,7 @@ This GitHub repository is the source for **Cloudflare Workers Builds**. The work
 
 Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces. Do not invent a new palette or clone Checkers branding.
 
-www layout is a **Sixty60-class craft bar**: one primary **Log in** in a ~56px sticky header; docs / invite / app links are demoted; Live now is the first-viewport product surface (status + one **Open.**; Walkthrough secondary); coming apps each have **Notify me.**; Owner vs Staff is a role-first door below. Token polish without that hierarchy is a miss.
+www layout is a **Sixty60-class craft bar**: one terracotta primary **Log in** in a ~56px sticky header; Live **Open.** and Owner **Open your hub** are forest outline secondaries; footer hub is a quiet text link; Live now is the first-viewport product surface (dense cards, Walkthrough quieter); coming apps each have **Notify me.** Token polish without that hierarchy is a miss.
 
 Desktop and mobile home screens live in [`docs/ux`](docs/ux).
 

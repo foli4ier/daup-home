@@ -76,7 +76,7 @@ export function Footer() {
             Staff invite
           </Link>
         </div>
-        <a className="btn btn-primary" href={HUB}>
+        <a className="quiet-link" href={HUB}>
           Open your hub ↗
         </a>
       </div>
@@ -201,7 +201,7 @@ export function LiveCards({ expanded = false }: { expanded?: boolean }) {
             </h3>
             <p>Tables, tickets, kitchen, stock.</p>
           </div>
-          <a className="btn btn-primary btn-open" href={EATERY}>
+          <a className="btn btn-secondary btn-open" href={EATERY}>
             Open.
           </a>
         </div>
@@ -230,7 +230,7 @@ export function LiveCards({ expanded = false }: { expanded?: boolean }) {
             </h3>
             <p>Where the owner sets up the business and invites staff.</p>
           </div>
-          <a className="btn btn-primary btn-open" href={HUB}>
+          <a className="btn btn-secondary btn-open" href={HUB}>
             Open.
           </a>
         </div>
@@ -320,7 +320,7 @@ export function YourPlaces() {
                 <strong>{place.name}</strong>
                 <span>{place.role}</span>
               </div>
-              <a className="btn btn-primary btn-open" href={place.href}>
+              <a className="btn btn-secondary btn-open" href={place.href}>
                 Continue
               </a>
             </li>
@@ -343,7 +343,7 @@ export function RoleDoor() {
           <p className="door-role">Owner</p>
           <h3>You run the room.</h3>
           <p>Set up the eatery. Invite tonight’s floor. Hub is yours.</p>
-          <a className="btn btn-primary" href={HUB}>
+          <a className="btn btn-secondary" href={HUB}>
             Open your hub ↗
           </a>
         </article>
