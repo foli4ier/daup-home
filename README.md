@@ -4,7 +4,11 @@ Public marketing site for **daup.co.za** — food, from the people who grow it t
 
 This GitHub repository is the source for **Cloudflare Workers Builds**. The worker serves the Vite dist/ folder as static assets (wrangler.json). Builds run on Cloudflare; do not commit node_modules.
 
-Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Do not redesign here.
+Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces. Do not invent a new palette or clone Checkers branding.
+
+www layout is a **Sixty60-class craft bar**: one primary **Log in** in a ~56px sticky header; docs / invite / app links are demoted; Live now is the first-viewport product surface (status + one **Open.**; Walkthrough secondary); coming apps each have **Notify me.**; Owner vs Staff is a role-first door below. Token polish without that hierarchy is a miss.
+
+Desktop and mobile home screens live in [`docs/ux`](docs/ux).
 
 ## How daup.co.za becomes this look
 
@@ -44,10 +48,12 @@ Staff do not log in here. "I have a staff invite" stays on this host at /invite.
 
 This site has no cookies, no /login, no /profile, and no vault. Public names are **Eatery** and **Your hub** only.
 
+**Your places** is a personalization slot. Logged-out (the default) shows a quiet empty. Known places can be previewed with `?known=1` or `localStorage.daup.places`. **Notify me.** is a local stub (`localStorage.daup.notify`). Neither writes a cookie.
+
 ## Routes
 
-- / — homepage (#how-it-works)
-- /apps — live apps (Eatery, Your hub) plus coming chips
+- / — homepage: craft bar, Live now (#how-it-works), Your places, Coming, Owner/Staff door
+- /apps — live apps (Eatery, Your hub) plus coming Notify me. rows
 - /apps/eatery
 - /apps/hub — owner hub, plain language (never titled Edge Hub)
 - /docs — shift-style walkthroughs
