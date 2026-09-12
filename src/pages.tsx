@@ -1,7 +1,17 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { EATERY, HUB, walkthroughs, type Walkthrough } from "./content";
-import { DocsBand, FloorPhone, Footer, LiveCards, Nav, PhoneMock } from "./ui";
+import {
+  ComingApps,
+  DocsBand,
+  FloorPhone,
+  Footer,
+  LiveCards,
+  Nav,
+  PhoneMock,
+  RoleDoor,
+  YourPlaces,
+} from "./ui";
 
 function Shell({ children }: { children: ReactNode }) {
   return (
@@ -20,19 +30,7 @@ export function HomePage() {
         <div>
           <h1>Food, from the people who grow it to the people who plate it.</h1>
           <p className="lede">
-            DAUP is the chain between farm, factory, reseller, and eatery. You
-            run the business. Staff join with a WhatsApp tap.
-          </p>
-          <div className="hero-ctas">
-            <a className="btn btn-primary" href={HUB}>
-              Log in ↗
-            </a>
-            <Link className="btn btn-ghost" to="/docs/eatery/tuesday-lunch">
-              See how a shift works
-            </Link>
-          </div>
-          <p className="caption">
-            Eatery first. Farm, reseller, and maker are next.
+            You run the business. Staff join with a WhatsApp tap.
           </p>
         </div>
         <div className="phone-col">
@@ -40,9 +38,27 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="section" id="how-it-works">
+      <section className="live-band" id="how-it-works">
         <div className="wrap">
           <LiveCards />
+        </div>
+      </section>
+
+      <section className="section places-band">
+        <div className="wrap">
+          <YourPlaces />
+        </div>
+      </section>
+
+      <section className="section coming-band">
+        <div className="wrap">
+          <ComingApps />
+        </div>
+      </section>
+
+      <section className="section door-band">
+        <div className="wrap">
+          <RoleDoor />
         </div>
       </section>
 

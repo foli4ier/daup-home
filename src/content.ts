@@ -103,3 +103,20 @@ export const starters = [
     kind: "shop" as const,
   },
 ];
+
+export const comingApps = [
+  { id: "farm", name: "Farm", blurb: "Grow and send." },
+  { id: "reseller", name: "Reseller", blurb: "Move the book." },
+  { id: "maker", name: "Maker", blurb: "Make and plate-ready." },
+] as const;
+
+export type Place = {
+  name: string;
+  role: "Owner" | "Staff";
+  href: string;
+};
+
+export const demoPlaces: Place[] = [
+  { name: "The Olive", role: "Owner", href: HUB },
+  { name: "The Olive · Floor", role: "Staff", href: EATERY },
+];
