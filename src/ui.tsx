@@ -39,8 +39,8 @@ export function Nav() {
             <Link to="/docs">Docs</Link>
           </div>
           <div className="nav-actions">
-            <a className="btn btn-primary" href={HUB}>
-              Log in ↗
+            <a className="btn btn-outline" href={HUB}>
+              Log in.
             </a>
             <button
               className="nav-more"
@@ -58,7 +58,7 @@ export function Nav() {
           <div className="nav-drawer" id="nav-drawer">
             <Link to="/apps">Apps</Link>
             <Link to="/docs">Docs</Link>
-            <Link to="/invite">I have a staff invite</Link>
+            <Link to="/invite">I have a staff invite.</Link>
           </div>
         ) : null}
       </div>
@@ -77,7 +77,7 @@ export function Footer() {
           </Link>
         </div>
         <a className="quiet-link" href={HUB}>
-          Open your hub ↗
+          Open your hub.
         </a>
       </div>
     </footer>
@@ -181,72 +181,139 @@ function ComingIcon({ id }: { id: string }) {
   return <IconFactory />;
 }
 
-export function LiveCards({ expanded = false }: { expanded?: boolean }) {
+export function TrustStrip() {
+  return (
+    <section className="trust-band" id="trust" aria-label="Price and proof">
+      <div className="wrap trust">
+        <figure className="trust-still">
+          <div className="demo-frame">
+            <span className="demo-badge">Demo</span>
+            <PhoneMock />
+          </div>
+          <figcaption>Sample floor, The Olive. Not a live room.</figcaption>
+        </figure>
+        <div className="trust-copy">
+          <p className="kicker">The offer</p>
+          <p className="trust-price">R199 a place.</p>
+          <p>
+            One eatery: tables, tickets, kitchen, and stock. Start with email
+            on the hub.
+          </p>
+          <Link className="btn btn-outline" to="/docs/hub/set-up-eatery">
+            Book a walkthrough.
+          </Link>
+          <p className="caption">
+            Opens the setup walkthrough on this site. DAUP · South Africa ·
+            www.daup.co.za
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EateryLiveCard({
+  expanded = false,
+  showOpen = true,
+}: {
+  expanded?: boolean;
+  showOpen?: boolean;
+}) {
+  return (
+    <article className="card live-card">
+      <div className={showOpen ? "live-row" : "live-row live-row-text"}>
+        <span className="ico-sq">
+          <IconCloche />
+        </span>
+        <div className="live-copy">
+          <h3>
+            <Link to="/apps/eatery">Eatery</Link>
+            <span className="live">LIVE</span>
+          </h3>
+          <p>
+            {showOpen
+              ? "Tables, tickets, kitchen, stock."
+              : "Staff run the floor here: tables, tickets, kitchen, stock. They join from the WhatsApp you send, not from this page."}
+          </p>
+        </div>
+        {showOpen ? (
+          <a className="btn btn-secondary btn-open" href={EATERY}>
+            Open eatery.
+          </a>
+        ) : null}
+      </div>
+      {expanded ? (
+        <div className="expand">
+          <p>
+            The floor app for service. Seat a table, fire a ticket, 86 a dish,
+            close the shift. Kitchen sees what you send.
+          </p>
+        </div>
+      ) : null}
+      <Link className="walk-link" to="/docs/eatery/tuesday-lunch">
+        Walkthrough
+      </Link>
+    </article>
+  );
+}
+
+function HubLiveCard({ expanded = false }: { expanded?: boolean }) {
+  return (
+    <article className="card live-card">
+      <div className="live-row">
+        <span className="ico-sq">
+          <IconHouse />
+        </span>
+        <div className="live-copy">
+          <h3>
+            <Link to="/apps/hub">Your hub</Link>
+            <span className="live">LIVE</span>
+          </h3>
+          <p>Where the owner sets up the business and invites staff.</p>
+        </div>
+        <a className="btn btn-secondary btn-open" href={HUB}>
+          Open your hub.
+        </a>
+      </div>
+      {expanded ? (
+        <div className="expand">
+          <p>
+            Owners start here. Set up the eatery, send tonight’s floor a
+            WhatsApp invite. Staff do not join as a new business.
+          </p>
+        </div>
+      ) : null}
+      <Link className="walk-link" to="/docs/hub/set-up-eatery">
+        Walkthrough
+      </Link>
+    </article>
+  );
+}
+
+export function LiveCards({
+  expanded = false,
+  home = false,
+}: {
+  expanded?: boolean;
+  home?: boolean;
+}) {
   return (
     <div className={expanded ? "apps-stack" : "live-stack"}>
       <div className="section-head live-kicker">
         <span className="kicker">Live now</span>
         <span className="rule" />
       </div>
-
-      <article className="card live-card">
-        <div className="live-row">
-          <span className="ico-sq">
-            <IconCloche />
-          </span>
-          <div className="live-copy">
-            <h3>
-              <Link to="/apps/eatery">Eatery</Link>
-              <span className="live">LIVE</span>
-            </h3>
-            <p>Tables, tickets, kitchen, stock.</p>
-          </div>
-          <a className="btn btn-secondary btn-open" href={EATERY}>
-            Open.
-          </a>
-        </div>
-        {expanded ? (
-          <div className="expand">
-            <p>
-              The floor app for service. Seat a table, fire a ticket, 86 a dish,
-              close the shift. Kitchen sees what you send.
-            </p>
-          </div>
-        ) : null}
-        <Link className="walk-link" to="/docs/eatery/tuesday-lunch">
-          Walkthrough
-        </Link>
-      </article>
-
-      <article className="card live-card">
-        <div className="live-row">
-          <span className="ico-sq">
-            <IconHouse />
-          </span>
-          <div className="live-copy">
-            <h3>
-              <Link to="/apps/hub">Your hub</Link>
-              <span className="live">LIVE</span>
-            </h3>
-            <p>Where the owner sets up the business and invites staff.</p>
-          </div>
-          <a className="btn btn-secondary btn-open" href={HUB}>
-            Open.
-          </a>
-        </div>
-        {expanded ? (
-          <div className="expand">
-            <p>
-              Owners start here. Set up the eatery, send tonight’s floor a
-              WhatsApp invite. Staff do not join as a new business.
-            </p>
-          </div>
-        ) : null}
-        <Link className="walk-link" to="/docs/hub/set-up-eatery">
-          Walkthrough
-        </Link>
-      </article>
-
+      {home ? (
+        <>
+          <HubLiveCard />
+          <EateryLiveCard showOpen={false} />
+        </>
+      ) : (
+        <>
+          <EateryLiveCard expanded={expanded} />
+          <HubLiveCard expanded={expanded} />
+        </>
+      )}
       {expanded ? <ComingApps /> : null}
     </div>
   );
@@ -344,7 +411,7 @@ export function RoleDoor() {
           <h3>You run the room.</h3>
           <p>Set up the eatery. Invite tonight’s floor. Hub is yours.</p>
           <a className="btn btn-secondary" href={HUB}>
-            Open your hub ↗
+            Open your hub.
           </a>
         </article>
         <article className="card door-card">
@@ -352,7 +419,7 @@ export function RoleDoor() {
           <h3>You were invited.</h3>
           <p>WhatsApp is the login. Do not open the hub as a new business.</p>
           <Link className="btn btn-outline" to="/invite">
-            I have a staff invite
+            I have a staff invite.
           </Link>
         </article>
       </div>
