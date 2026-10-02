@@ -8,8 +8,8 @@ import {
   Footer,
   LiveCards,
   Nav,
-  PhoneMock,
   RoleDoor,
+  TrustStrip,
   YourPlaces,
 } from "./ui";
 
@@ -28,19 +28,24 @@ export function HomePage() {
     <Shell>
       <section className="wrap hero">
         <div>
-          <h1>Food, from the people who grow it to the people who plate it.</h1>
+          <h1>Software for South African food-business owners.</h1>
           <p className="lede">
-            You run the business. Staff join with a WhatsApp tap.
+            Tables, tickets, kitchen, and stock. You run the place. Staff join
+            on WhatsApp.
           </p>
-        </div>
-        <div className="phone-col">
-          <PhoneMock />
+          <div className="hero-actions">
+            <a className="btn btn-primary" href={HUB}>
+              Start with email.
+            </a>
+          </div>
         </div>
       </section>
 
+      <TrustStrip />
+
       <section className="live-band" id="how-it-works">
         <div className="wrap">
-          <LiveCards />
+          <LiveCards home />
         </div>
       </section>
 
@@ -104,7 +109,7 @@ export function AppEateryPage() {
           </p>
           <div className="card-links">
             <a className="btn btn-primary" href={EATERY}>
-              Open eatery ↗
+              Open eatery.
             </a>
             <Link className="text-link" to="/docs/eatery/tuesday-lunch">
               Walk me through it ›
@@ -135,7 +140,7 @@ export function AppHubPage() {
           </p>
           <div className="card-links">
             <a className="btn btn-primary" href={HUB}>
-              Open your hub ↗
+              Open your hub.
             </a>
             <Link className="text-link" to="/docs/hub/set-up-eatery">
               Walk me through it ›

@@ -1,12 +1,12 @@
 # daup-www
 
-Public marketing site for **daup.co.za** — food, from the people who grow it to the people who plate it.
+Public marketing site for **daup.co.za** — software for South African food-business owners. Staff join on WhatsApp.
 
 This GitHub repository is the source for **Cloudflare Workers Builds**. The worker serves the Vite dist/ folder as static assets (wrangler.json). Builds run on Cloudflare; do not commit node_modules.
 
 Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces. Do not invent a new palette or clone Checkers branding.
 
-www layout is a **Sixty60-class craft bar**: one terracotta primary **Log in** in a ~56px sticky header; Live **Open.** and Owner **Open your hub** are forest outline secondaries; footer hub is a quiet text link; Live now is the first-viewport product surface (dense cards, Walkthrough quieter); coming apps each have **Notify me.** Token polish without that hierarchy is a miss.
+Home hierarchy (Change set 1 — clarity): plain hero stating what and who, one terracotta **Start with email.** to https://app.daup.co.za/, header **Log in.** as an outline, then a trust strip (labeled demo, **R199 a place.**, **Book a walkthrough.**, DAUP · South Africa). Live now puts the hub first; the home Eatery card explains the floor and has no Open. Staff invite stays in the header drawer and the footer. Buttons take a full stop and at least `var(--tap)` (48px). Coming apps each have **Notify me.**
 
 Desktop and mobile home screens live in [`docs/ux`](docs/ux).
 
@@ -40,7 +40,7 @@ Attach the apex `daup.co.za` only when this site is ready to replace the Flutter
 - app.daup.co.za — owner hub (separate, secure). Log in happens there.
 - eatery.daup.co.za — live eatery floor app
 
-Log in and Open your hub leave this origin and open https://app.daup.co.za/ (hub home, full navigation, never an iframe, no query paths, never auto-launch the eatery).
+Log in, Start with email, and Open your hub leave this origin and open https://app.daup.co.za/ (hub home, full navigation, never an iframe, no query paths, never auto-launch the eatery). There is no email field on this site.
 
 Open eatery goes to https://eatery.daup.co.za/.
 
@@ -52,7 +52,7 @@ This site has no cookies, no /login, no /profile, and no vault. Public names are
 
 ## Routes
 
-- / — homepage: craft bar, Live now (#how-it-works), Your places, Coming, Owner/Staff door
+- / — homepage: plain hero, trust strip (#trust), Live now (#how-it-works), Your places, Coming, Owner/Staff door
 - /apps — live apps (Eatery, Your hub) plus coming Notify me. rows
 - /apps/eatery
 - /apps/hub — owner hub, plain language (never titled Edge Hub)
