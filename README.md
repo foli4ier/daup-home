@@ -6,7 +6,7 @@ This GitHub repository is the source for **Cloudflare Workers Builds**. The work
 
 Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces. Do not invent a new palette or clone Checkers branding.
 
-Home hierarchy (Change set 1 — clarity): plain hero stating what and who, one terracotta **Start with email.** to https://app.daup.co.za/, header **Log in.** as an outline, then a trust strip (labeled demo, **R199 a place.**, **Book a walkthrough.**, DAUP · South Africa). Live now puts the hub first; the home Eatery card explains the floor and has no Open. Staff invite stays in the header drawer and the footer. Buttons take a full stop and at least `var(--tap)` (48px). Coming apps each have **Notify me.**
+Home hierarchy (Change set 2 — offer in the hero): plain hero stating what and who. In that same band: one terracotta **Start with email.** to https://app.daup.co.za/, an outline **Book a walkthrough.** to WhatsApp, and an **R199 a place.** chip beside them. Company line in the hero: DAUP · South Africa, WhatsApp for walkthroughs +27829261373, www.daup.co.za. A sample Eatery floor still (Kortrijk — not a live customer room) sits in the hero, beside the copy on desktop and directly under it on a phone. Header **Log in.** stays an outline. Live now puts the hub first; the home Eatery card explains the floor and has no Open. Staff invite stays in the header drawer and the footer. Buttons take a full stop and at least `var(--tap)` (48px). Coming apps each have **Notify me.**
 
 Desktop and mobile home screens live in [`docs/ux`](docs/ux).
 
@@ -52,7 +52,7 @@ This site has no cookies, no /login, no /profile, and no vault. Public names are
 
 ## Routes
 
-- / — homepage: plain hero, trust strip (#trust), Live now (#how-it-works), Your places, Coming, Owner/Staff door
+- / — homepage: plain hero with the offer cluster and sample floor (#trust), Live now (#how-it-works), Your places, Coming, Owner/Staff door
 - /apps — live apps (Eatery, Your hub) plus coming Notify me. rows
 - /apps/eatery
 - /apps/hub — owner hub, plain language (never titled Edge Hub)

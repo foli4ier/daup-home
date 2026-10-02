@@ -1,5 +1,8 @@
 export const HUB = "https://app.daup.co.za/";
 export const EATERY = "https://eatery.daup.co.za/";
+export const WHATSAPP_DISPLAY = "+27829261373";
+export const WHATSAPP =
+  "https://wa.me/27829261373?text=I%20would%20like%20a%20walkthrough.";
 
 export type Step = {
   title: string;
