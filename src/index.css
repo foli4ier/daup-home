@@ -186,9 +186,16 @@ ul {
 }
 
 .hero {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  gap: 28px;
+  align-items: start;
+  padding: 22px 0 16px;
+}
+
+.hero-copy {
   max-width: 40rem;
-  padding: 22px 0 8px;
+  min-width: 0;
 }
 
 .hero h1 {
@@ -210,66 +217,81 @@ ul {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-top: 18px;
 }
 
-.trust-band {
-  padding: 18px 0 8px;
+.hero-actions .btn {
+  flex: 0 0 auto;
 }
 
-.trust {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 28px;
-  align-items: center;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 18px 22px;
-}
-
-.trust-still {
+.price-chip {
   margin: 0;
-  display: grid;
-  justify-items: center;
-  gap: 8px;
+  width: fit-content;
+  color: var(--ink);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
-.trust-still figcaption,
-.trust-copy .caption {
-  margin: 0;
-  max-width: 36rem;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.trust-copy {
+.hero-contact {
   display: grid;
   justify-items: start;
-  gap: 10px;
+  gap: 0;
+  margin-top: 12px;
 }
 
-.trust-copy .kicker {
+.hero-company {
   margin: 0;
-}
-
-.trust-price {
-  margin: 0;
-  font-size: clamp(1.6rem, 2.4vw, 2rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
   font-weight: 750;
 }
 
-.trust-copy p {
+.hero-wa {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-contact .caption {
   margin: 0;
 }
 
-.demo-frame {
+.proof {
+  margin: 0;
   display: grid;
-  justify-items: center;
   gap: 8px;
+  min-width: 0;
+}
+
+.proof-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--white);
+  line-height: 0;
+}
+
+.proof-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.proof-frame .demo-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.proof figcaption {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .demo-badge {
@@ -287,11 +309,6 @@ ul {
   margin: 0;
   color: var(--muted);
   font-size: 0.95rem;
-}
-
-.phone-col {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .phone {
@@ -952,17 +969,7 @@ ul {
 
 @media (max-width: 960px) {
   .hero {
-    padding: 16px 0 4px;
-  }
-
-  .trust {
-    grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 16px;
-  }
-
-  .phone-col {
-    display: none;
+    padding: 16px 0 12px;
   }
 
   .docs-band {
@@ -1003,7 +1010,9 @@ ul {
   }
 
   .hero {
-    padding: 14px 0 4px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px 0 8px;
   }
 
   .hero h1 {
@@ -1016,38 +1025,36 @@ ul {
   }
 
   .hero-actions {
-    margin-top: 14px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+    margin-top: 12px;
+    gap: 10px;
   }
 
-  .trust-band {
-    padding: 12px 0 4px;
+  .hero-actions .btn-primary {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 14px;
   }
 
-  .trust {
-    gap: 12px;
-    padding: 14px;
+  .hero-actions .price-chip {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 12px;
   }
 
-  .trust .phone {
-    width: 156px;
+  .hero-actions .btn-book {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
-  .trust .phone-screen {
-    min-height: 0;
+  .hero-contact {
+    margin-top: 8px;
   }
 
-  .trust .scene {
-    height: 52px;
-  }
-
-  .trust .tiles {
-    gap: 4px;
-    padding: 6px 8px 8px;
-  }
-
-  .trust .tile {
-    min-height: 30px;
-    font-size: 0.8rem;
+  .proof-frame {
+    max-width: 340px;
   }
 
   .live-band {

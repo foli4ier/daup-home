@@ -1,6 +1,13 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
-import { EATERY, HUB, walkthroughs, type Walkthrough } from "./content";
+import {
+  EATERY,
+  HUB,
+  WHATSAPP,
+  WHATSAPP_DISPLAY,
+  walkthroughs,
+  type Walkthrough,
+} from "./content";
 import {
   ComingApps,
   DocsBand,
@@ -8,8 +15,8 @@ import {
   Footer,
   LiveCards,
   Nav,
+  ProductProof,
   RoleDoor,
-  TrustStrip,
   YourPlaces,
 } from "./ui";
 
@@ -27,7 +34,7 @@ export function HomePage() {
   return (
     <Shell>
       <section className="wrap hero">
-        <div>
+        <div className="hero-copy">
           <h1>Software for South African food-business owners.</h1>
           <p className="lede">
             Tables, tickets, kitchen, and stock. You run the place. Staff join
@@ -37,11 +44,21 @@ export function HomePage() {
             <a className="btn btn-primary" href={HUB}>
               Start with email.
             </a>
+            <a className="btn btn-outline btn-book" href={WHATSAPP}>
+              Book a walkthrough.
+            </a>
+            <p className="chip price-chip">R199 a place.</p>
+          </div>
+          <div className="hero-contact">
+            <p className="hero-company">DAUP · South Africa</p>
+            <a className="hero-wa" href={WHATSAPP}>
+              WhatsApp for walkthroughs: {WHATSAPP_DISPLAY}
+            </a>
+            <p className="caption">www.daup.co.za</p>
           </div>
         </div>
+        <ProductProof />
       </section>
-
-      <TrustStrip />
 
       <section className="live-band" id="how-it-works">
         <div className="wrap">

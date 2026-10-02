@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { EATERY, HUB, comingApps, starters } from "./content";
 import {
-  IconBell,
+  EATERY,
+  HUB,
+  WHATSAPP,
+  WHATSAPP_DISPLAY,
+  comingApps,
+  starters,
+} from "./content";
+import {
   IconBook,
   IconCloche,
   IconFactory,
   IconFork,
-  IconHeart,
   IconHouse,
   IconKitchen,
   IconMenu,
@@ -71,6 +76,12 @@ export function Footer() {
     <footer>
       <div className="wrap site-footer">
         <div>
+          <p className="footer-lead">DAUP · South Africa</p>
+          <a className="quiet-link" href={WHATSAPP}>
+            WhatsApp for walkthroughs: {WHATSAPP_DISPLAY}
+          </a>
+        </div>
+        <div>
           <p className="footer-lead">Already set up?</p>
           <Link className="quiet-link" to="/invite">
             Staff invite
@@ -81,54 +92,6 @@ export function Footer() {
         </a>
       </div>
     </footer>
-  );
-}
-
-export function PhoneMock() {
-  return (
-    <div className="phone" aria-hidden="true">
-      <div className="phone-screen">
-        <div className="island" />
-        <div className="status">
-          <span>9:41</span>
-          <span>▮▮▮</span>
-        </div>
-        <div className="floor-head">
-          <span className="avatar">L</span>
-          <span className="who">Lerato · Floor · The Olive</span>
-          <span className="bell">
-            <IconBell />
-          </span>
-        </div>
-        <div className="scene">
-          <span className="lamp" />
-          <span className="lamp" />
-          <span className="table a" />
-          <span className="table b" />
-          <span className="table c" />
-        </div>
-        <div className="tiles">
-          <div className="tile">
-            <span className="ico forest">
-              <IconTable />
-            </span>
-            Tables
-          </div>
-          <div className="tile">
-            <span className="ico terra">
-              <IconTicket />
-            </span>
-            Tickets
-          </div>
-          <div className="tile">
-            <span className="ico forest">
-              <IconHeart />
-            </span>
-            Tips
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -181,34 +144,21 @@ function ComingIcon({ id }: { id: string }) {
   return <IconFactory />;
 }
 
-export function TrustStrip() {
+export function ProductProof() {
   return (
-    <section className="trust-band" id="trust" aria-label="Price and proof">
-      <div className="wrap trust">
-        <figure className="trust-still">
-          <div className="demo-frame">
-            <span className="demo-badge">Demo</span>
-            <PhoneMock />
-          </div>
-          <figcaption>Sample floor, The Olive. Not a live room.</figcaption>
-        </figure>
-        <div className="trust-copy">
-          <p className="kicker">The offer</p>
-          <p className="trust-price">R199 a place.</p>
-          <p>
-            One eatery: tables, tickets, kitchen, and stock. Start with email
-            on the hub.
-          </p>
-          <Link className="btn btn-outline" to="/docs/hub/set-up-eatery">
-            Book a walkthrough.
-          </Link>
-          <p className="caption">
-            Opens the setup walkthrough on this site. DAUP · South Africa ·
-            www.daup.co.za
-          </p>
-        </div>
+    <figure className="proof" id="trust">
+      <div className="proof-frame">
+        <span className="demo-badge">Sample</span>
+        <img
+          src="/proof/eatery-floor-sample.png"
+          width={780}
+          height={1464}
+          alt="Sample Eatery floor at Kortrijk: window tables, a clash, a plate ready, and a ticket in service."
+          decoding="async"
+        />
       </div>
-    </section>
+      <figcaption>Sample floor, Kortrijk. Not a live customer room.</figcaption>
+    </figure>
   );
 }
 
