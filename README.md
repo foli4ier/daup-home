@@ -1,14 +1,14 @@
 # daup-www
 
-Public marketing site for **daup.co.za** — software for South African food-business owners. Staff join on WhatsApp.
+Public marketing site for **www.daup.co.za**. Direction A: educate and send people to the Hub. Registration (email, WhatsApp, location) lives on the Hub. This site has no signup form.
 
 This GitHub repository is the source for **Cloudflare Workers Builds**. The worker serves the Vite dist/ folder as static assets (wrangler.json). Builds run on Cloudflare; do not commit node_modules.
 
-Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces. Do not invent a new palette or clone Checkers branding.
+Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces.
 
-Home hierarchy (Change set 2 — offer in the hero): plain hero stating what and who. In that same band: one terracotta **Start with email.** to https://app.daup.co.za/, an outline **Book a walkthrough.** to WhatsApp, and an **R199 a place.** chip beside them. Company line in the hero: DAUP · South Africa, WhatsApp for walkthroughs +27829261373, www.daup.co.za. A sample Eatery floor still (Kortrijk — not a live customer room) sits in the hero, beside the copy on desktop and directly under it on a phone. Header **Log in.** stays an outline. Live now puts the hub first; the home Eatery card explains the floor and has no Open. Staff invite stays in the header drawer and the footer. Buttons take a full stop and at least `var(--tap)` (48px). Coming apps each have **Notify me.**
+Homepage spine: hero (“Your house runs on one platform.”), big picture, trust tabs, six app tabs, Hub CTA band, footer. One terracotta **Open Hub.** goes to https://app.daup.co.za. **Book a walkthrough.** goes to https://wa.me/27829261373. No price chip and no “Live now” row in the hero. The phone in the hero is a CSS still of the Hub (placeholder framing from the Direction A comp — not a capture of the live Hub).
 
-Desktop and mobile home screens live in [`docs/ux`](docs/ux).
+Desktop and mobile soft-sign stills live in [`docs/ux`](docs/ux).
 
 ## How daup.co.za becomes this look
 
@@ -29,6 +29,9 @@ www must own real path routing for:
 - /apps/hub
 - /docs
 - /docs/*
+- /privacy
+- /terms
+- /popia
 
 The build writes an `index.html` under each of those directories in `dist/` so the edge serves a real file, not a Flutter rewrite. `wrangler.json` also sets `not_found_handling: single-page-application` as a fallback.
 
@@ -36,30 +39,29 @@ Attach the apex `daup.co.za` only when this site is ready to replace the Flutter
 
 ## What this site is (and is not)
 
-- daup.co.za / www — public marketing, /apps, /docs, /invite
-- app.daup.co.za — owner hub (separate, secure). Log in happens there.
-- eatery.daup.co.za — live eatery floor app
+- www.daup.co.za — public marketing. Educate, then **Open Hub.**
+- app.daup.co.za — the Hub. Log in and registration happen there.
+- eatery.daup.co.za — the Eatery app (linked from older /apps pages, not from the homepage hero)
 
-Log in, Start with email, and Open your hub leave this origin and open https://app.daup.co.za/ (hub home, full navigation, never an iframe, no query paths, never auto-launch the eatery). There is no email field on this site.
+**Open Hub.** and **Log in.** leave this origin and open https://app.daup.co.za (never an iframe, no query paths). There is no email field, WhatsApp field, or location field on this site.
 
-Open eatery goes to https://eatery.daup.co.za/.
+**Book a walkthrough.** opens https://wa.me/27829261373.
 
-Staff do not log in here. "I have a staff invite" stays on this host at /invite. The WhatsApp the owner sent is their login. Do not send staff to the hub as a new node.
+Staff invites still resolve at /invite for links already in the wild. The homepage does not ask anyone to register.
 
-This site has no cookies, no /login, no /profile, and no vault. Public names are **Eatery** and **Your hub** only.
-
-**Your places** is a personalization slot. Logged-out (the default) shows a quiet empty. Known places can be previewed with `?known=1` or `localStorage.daup.places`. **Notify me.** is a local stub (`localStorage.daup.notify`). Neither writes a cookie.
+This site has no cookies and no /login. The older /apps page still has **Notify me.** as a local stub (`localStorage.daup.notify`). It does not write a cookie and it is not on the homepage.
 
 ## Routes
 
-- / — homepage: plain hero with the offer cluster and sample floor (#trust), Live now (#how-it-works), Your places, Coming, Owner/Staff door
-- /apps — live apps (Eatery, Your hub) plus coming Notify me. rows
+- / — Direction A homepage: hero, big picture (#platform), trust tabs (#trust), app tabs (#apps), Hub CTA (#hub)
+- /privacy, /terms, /popia — short kitchen-English legal notes. No forms.
+- /apps — earlier apps index (Eatery, Your hub) kept so the path still resolves
 - /apps/eatery
-- /apps/hub — owner hub, plain language (never titled Edge Hub)
+- /apps/hub
 - /docs — shift-style walkthroughs
 - /docs/eatery/tuesday-lunch
 - /docs/hub/set-up-eatery
-- /invite — the only staff-invite URL
+- /invite — staff-invite URL kept for existing links
 - /docs/staff-invite — client redirect to /invite
 
 ## Local

@@ -3,24 +3,24 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import {
   EATERY,
   HUB,
-  WHATSAPP,
-  WHATSAPP_DISPLAY,
+  legalPages,
   walkthroughs,
   type Walkthrough,
 } from "./content";
-import {
-  ComingApps,
-  DocsBand,
-  FloorPhone,
-  Footer,
-  LiveCards,
-  Nav,
-  ProductProof,
-  RoleDoor,
-  YourPlaces,
-} from "./ui";
+import { HomeSpine } from "./home";
+import { DocsBand, FloorPhone, Footer, LiveCards, Nav } from "./ui";
 
-function Shell({ children }: { children: ReactNode }) {
+function Shell({
+  children,
+  title,
+}: {
+  children: ReactNode;
+  title?: string;
+}) {
+  useEffect(() => {
+    document.title = title ?? "DAUP — Your house runs on one platform.";
+  }, [title]);
+
   return (
     <>
       <Nav />
@@ -33,58 +33,25 @@ function Shell({ children }: { children: ReactNode }) {
 export function HomePage() {
   return (
     <Shell>
-      <section className="wrap hero">
-        <div className="hero-copy">
-          <h1>Software for South African food-business owners.</h1>
-          <p className="lede">
-            Tables, tickets, kitchen, and stock. You run the place. Staff join
-            on WhatsApp.
-          </p>
-          <div className="hero-actions">
-            <a className="btn btn-primary" href={HUB}>
-              Start with email.
-            </a>
-            <a className="btn btn-outline btn-book" href={WHATSAPP}>
-              Book a walkthrough.
-            </a>
-            <p className="chip price-chip">R199 a place.</p>
-          </div>
-          <div className="hero-contact">
-            <p className="hero-company">DAUP · South Africa</p>
-            <a className="hero-wa" href={WHATSAPP}>
-              WhatsApp for walkthroughs: {WHATSAPP_DISPLAY}
-            </a>
-            <p className="caption">www.daup.co.za</p>
-          </div>
-        </div>
-        <ProductProof />
-      </section>
+      <HomeSpine />
+    </Shell>
+  );
+}
 
-      <section className="live-band" id="how-it-works">
-        <div className="wrap">
-          <LiveCards home />
-        </div>
-      </section>
-
-      <section className="section places-band">
-        <div className="wrap">
-          <YourPlaces />
-        </div>
-      </section>
-
-      <section className="section coming-band">
-        <div className="wrap">
-          <ComingApps />
-        </div>
-      </section>
-
-      <section className="section door-band">
-        <div className="wrap">
-          <RoleDoor />
-        </div>
-      </section>
-
-      <DocsBand />
+export function LegalPage({ page }: { page: keyof typeof legalPages }) {
+  const doc = legalPages[page];
+  return (
+    <Shell title={`${doc.title} — DAUP`}>
+      <article className="legal-page wrap">
+        <Link className="back" to="/">
+          ‹ Home
+        </Link>
+        <p className="section-kicker">Legal</p>
+        <h1 className="section-title">{doc.title}</h1>
+        {doc.paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </article>
     </Shell>
   );
 }

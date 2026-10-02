@@ -5,6 +5,7 @@ import App from "./App";
 import "daup-theme/fonts.css";
 import "daup-theme/tokens.css";
 import "./index.css";
+import "./home.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

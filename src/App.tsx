@@ -7,6 +7,7 @@ import {
   HashScroller,
   HomePage,
   InvitePage,
+  LegalPage,
   NotFound,
   SetupPage,
   StaffInviteRedirect,
@@ -26,6 +27,9 @@ export default function App() {
         <Route path="/docs/eatery/tuesday-lunch" element={<TuesdayPage />} />
         <Route path="/docs/hub/set-up-eatery" element={<SetupPage />} />
         <Route path="/invite" element={<InvitePage />} />
+        <Route path="/privacy" element={<LegalPage page="privacy" />} />
+        <Route path="/terms" element={<LegalPage page="terms" />} />
+        <Route path="/popia" element={<LegalPage page="popia" />} />
         <Route path="/docs/staff-invite" element={<StaffInviteRedirect />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
