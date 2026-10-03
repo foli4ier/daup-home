@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { EATERY, HUB, comingApps, starters } from "./content";
 import {
@@ -163,42 +163,47 @@ export function ProductProof() {
   );
 }
 
-function EateryLiveCard({
+function FoodLiveCard({
+  name,
+  to,
+  blurb,
+  more,
+  href,
+  openLabel,
+  icon,
   expanded = false,
   showOpen = true,
 }: {
+  name: string;
+  to: string;
+  blurb: string;
+  more?: string;
+  href: string;
+  openLabel: string;
+  icon: ReactNode;
   expanded?: boolean;
   showOpen?: boolean;
 }) {
   return (
     <article className="card live-card">
       <div className={showOpen ? "live-row" : "live-row live-row-text"}>
-        <span className="ico-sq">
-          <IconCloche />
-        </span>
+        <span className="ico-sq">{icon}</span>
         <div className="live-copy">
           <h3>
-            <Link to="/apps/eatery">Eat In</Link>
+            <Link to={to}>{name}</Link>
             <span className="live">LIVE</span>
           </h3>
-          <p>
-            {showOpen
-              ? "Tables, tickets, kitchen, stock."
-              : "Staff run the floor here: tables, tickets, kitchen, stock. They join from the WhatsApp you send, not from this page."}
-          </p>
+          <p>{blurb}</p>
         </div>
         {showOpen ? (
-          <a className="btn btn-secondary btn-open" href={EATERY}>
-            Open Eat In.
+          <a className="btn btn-secondary btn-open" href={href}>
+            {openLabel}
           </a>
         ) : null}
       </div>
-      {expanded ? (
+      {expanded && more ? (
         <div className="expand">
-          <p>
-            The floor app for service. Seat a table, fire a ticket, 86 a dish,
-            close the shift. Kitchen sees what you send.
-          </p>
+          <p>{more}</p>
         </div>
       ) : null}
     </article>
@@ -226,7 +231,7 @@ function HubLiveCard({ expanded = false }: { expanded?: boolean }) {
       {expanded ? (
         <div className="expand">
           <p>
-            Owners start here. Set up the eatery, send tonight’s floor a
+            Owners start here. Set up Eatery, send tonight’s floor a
             WhatsApp invite. Staff do not join as a new business.
           </p>
         </div>
@@ -242,23 +247,50 @@ export function LiveCards({
   expanded?: boolean;
   home?: boolean;
 }) {
+  const showFloorNote = home;
   return (
     <div className={expanded ? "apps-stack" : "live-stack"}>
       <div className="section-head live-kicker">
         <span className="kicker">Live now</span>
         <span className="rule" />
       </div>
-      {home ? (
-        <>
-          <HubLiveCard />
-          <EateryLiveCard showOpen={false} />
-        </>
-      ) : (
-        <>
-          <EateryLiveCard expanded={expanded} />
-          <HubLiveCard expanded={expanded} />
-        </>
-      )}
+      {home ? <HubLiveCard /> : null}
+      <FoodLiveCard
+        name="Eatery"
+        to="/apps/eatery"
+        blurb={
+          showFloorNote
+            ? "Staff run the floor here: tables, tickets, kitchen, stock. They join from the WhatsApp you send, not from this page."
+            : "Tables, tickets, kitchen, stock."
+        }
+        more="The floor app for service. Seat a table, fire a ticket, 86 a dish, close the shift. Kitchen sees what you send."
+        href={EATERY}
+        openLabel="Open Eatery."
+        icon={<IconCloche />}
+        expanded={expanded}
+        showOpen={!showFloorNote}
+      />
+      <FoodLiveCard
+        name="Eat In"
+        to="/apps/eat-in"
+        blurb="What’s for dinner, what’s in the fridge, and who still needs to pick up milk."
+        href={HUB}
+        openLabel="Open Hub."
+        icon={<IconFork />}
+        expanded={expanded}
+        showOpen={!showFloorNote}
+      />
+      <FoodLiveCard
+        name="Eat Out"
+        to="/apps/eat-out"
+        blurb="Reserve a table and pre-book a meal before you leave the house."
+        href={HUB}
+        openLabel="Open Hub."
+        icon={<IconTable />}
+        expanded={expanded}
+        showOpen={!showFloorNote}
+      />
+      {home ? null : <HubLiveCard expanded={expanded} />}
       {expanded ? <ComingApps /> : null}
     </div>
   );
@@ -354,7 +386,7 @@ export function RoleDoor() {
         <article className="card door-card">
           <p className="door-role">Owner</p>
           <h3>You run the room.</h3>
-          <p>Set up the eatery. Invite tonight’s floor. Hub is yours.</p>
+          <p>Set up Eatery. Invite tonight’s floor. Hub is yours.</p>
           <a className="btn btn-secondary" href={HUB}>
             Open your hub.
           </a>

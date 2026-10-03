@@ -1,11 +1,29 @@
 import { useState, type KeyboardEvent, type ReactNode } from "react";
 import { HUB, appTabs, trustTabs, type AppTab } from "./content";
 
+const COUNT_WORDS = [
+  "Zero",
+  "One",
+  "Two",
+  "Three",
+  "Four",
+  "Five",
+  "Six",
+  "Seven",
+  "Eight",
+  "Nine",
+  "Ten",
+] as const;
+
+function countWord(count: number) {
+  return COUNT_WORDS[count] ?? String(count);
+}
+
 const PHONE_APPS = [
-  { name: "Eat In", meta: "Tonight’s list", color: "#C45C26" },
+  { name: "Eatery", meta: "The floor", color: "#C45C26" },
+  { name: "Eat In", meta: "Tonight’s list", color: "#5C4033" },
+  { name: "Eat Out", meta: "Reserve", color: "#2F4A3C" },
   { name: "Vault", meta: "Your files", color: "#2F4A3C" },
-  { name: "Finance", meta: "This month", color: "#8B6914" },
-  { name: "Trade", meta: "Local deals", color: "#4A5568" },
 ] as const;
 
 function HouseMap() {
@@ -48,7 +66,7 @@ function HubPhone() {
               <span>On your phone</span>
             </div>
             <div className="hub-greeting">Good evening.</div>
-            <div className="hub-hint">Seven apps. One kitchen table.</div>
+            <div className="hub-hint">{countWord(appTabs.length)} apps. One kitchen table.</div>
             <div className="hub-apps">
               {PHONE_APPS.map((app) => (
                 <div className="app-tile" key={app.name}>
@@ -232,10 +250,9 @@ export function HomeSpine() {
       <section className="apps-band" id="apps">
         <div className="wrap">
           <p className="section-kicker">The apps</p>
-          <h2 className="section-title">Seven tools. One kitchen table.</h2>
+          <h2 className="section-title">{countWord(appTabs.length)} tools. One kitchen table.</h2>
           <p className="section-lead">
-            Each app does one job well. Open Hub to start; registration lives there. Eat In and
-            Eat Out are the Eatery restaurant apps.
+            Each app does one job well. Open Hub to start; registration lives there.
           </p>
           <TabSet
             label="Apps"
