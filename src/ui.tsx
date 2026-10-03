@@ -33,39 +33,40 @@ export function Nav() {
   }, [pathname]);
 
   return (
-    <header className="craft-bar">
-      <div className="wrap">
-        <nav className="site-nav" aria-label="Primary">
-          <Link className="logo" to="/">
-            DAUP
+    <header className="site-header">
+      <div className="wrap inner">
+        <Link className="brand" to="/">
+          DAUP
+        </Link>
+        <nav className={open ? "nav open" : "nav"} id="main-nav" aria-label="Primary">
+          <Link to="/#platform" onClick={() => setOpen(false)}>
+            Platform
           </Link>
-          <div className="nav-center">
-            <Link to="/apps">Apps</Link>
-            <Link to="/docs">Docs</Link>
-          </div>
-          <div className="nav-actions">
-            <a className="btn btn-outline" href={HUB}>
-              Log in.
-            </a>
-            <button
-              className="nav-more"
-              type="button"
-              aria-expanded={open}
-              aria-controls="nav-drawer"
-              onClick={() => setOpen((value) => !value)}
-            >
-              <IconMenu />
-              <span className="sr-only">More</span>
-            </button>
-          </div>
+          <Link to="/#trust" onClick={() => setOpen(false)}>
+            Trust
+          </Link>
+          <Link to="/#apps" onClick={() => setOpen(false)}>
+            Apps
+          </Link>
         </nav>
-        {open ? (
-          <div className="nav-drawer" id="nav-drawer">
-            <Link to="/apps">Apps</Link>
-            <Link to="/docs">Docs</Link>
-            <Link to="/invite">I have a staff invite.</Link>
-          </div>
-        ) : null}
+        <div className="nav-actions">
+          <a className="link-quiet" href={HUB}>
+            Log in.
+          </a>
+          <a className="btn btn-primary btn-pill btn-sm" href={HUB}>
+            Open Hub.
+          </a>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label="Menu"
+            aria-expanded={open}
+            aria-controls="main-nav"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span />
+          </button>
+        </div>
       </div>
     </header>
   );
@@ -73,23 +74,31 @@ export function Nav() {
 
 export function Footer() {
   return (
-    <footer>
-      <div className="wrap site-footer">
-        <div>
-          <p className="footer-lead">DAUP · South Africa</p>
-          <a className="quiet-link" href={WHATSAPP}>
-            WhatsApp for walkthroughs: {WHATSAPP_DISPLAY}
-          </a>
+    <footer className="site-foot">
+      <div className="wrap">
+        <div className="foot-grid">
+          <div>
+            <Link className="brand" to="/">
+              DAUP
+            </Link>
+            <p>One platform for South African houses and the work that runs from them.</p>
+          </div>
+          <div>
+            <h3>Walkthrough</h3>
+            <a href={WHATSAPP}>WhatsApp · {WHATSAPP_DISPLAY}</a>
+            <a href={HUB}>Open Hub.</a>
+          </div>
+          <div>
+            <h3>Legal</h3>
+            <Link to="/privacy">Privacy</Link>
+            <Link to="/terms">Terms</Link>
+            <Link to="/popia">POPIA</Link>
+          </div>
         </div>
-        <div>
-          <p className="footer-lead">Already set up?</p>
-          <Link className="quiet-link" to="/invite">
-            Staff invite
-          </Link>
+        <div className="foot-bottom">
+          <span>© DAUP · South Africa</span>
+          <span>Educate on www · Start in Hub</span>
         </div>
-        <a className="quiet-link" href={HUB}>
-          Open your hub.
-        </a>
       </div>
     </footer>
   );

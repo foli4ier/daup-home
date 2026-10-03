@@ -10,6 +10,9 @@ const SPA_PATHS = [
   "docs/eatery/tuesday-lunch",
   "docs/hub/set-up-eatery",
   "docs/staff-invite",
+  "privacy",
+  "terms",
+  "popia",
 ];
 
 const dist = join(process.cwd(), "dist");
