@@ -6,7 +6,7 @@ This GitHub repository is the source for **Cloudflare Workers Builds**. The work
 
 Visual tokens live in [`daup-theme`](https://github.com/foli4ier/daup-theme) (`import "daup-theme/tokens.css"`). Palette and type stay locked: cream / ink / terracotta / forest, DM Sans + Fraunces.
 
-Homepage spine: hero (“Your house runs on one platform.”), big picture, trust tabs, six app tabs, Hub CTA band, footer. One terracotta **Open Hub.** goes to https://app.daup.co.za. **Book a walkthrough.** goes to https://wa.me/27829261373. No price chip and no “Live now” row in the hero. The phone in the hero is a CSS still of the Hub (placeholder framing from the Direction A comp — not a capture of the live Hub).
+Homepage spine: hero (“Your house runs on one platform.”), big picture, trust tabs, seven app tabs, Hub CTA band, footer. One terracotta **Open Hub.** and header **Log in.** go to https://app.daup.co.za. There is no public walkthrough and no public WhatsApp number on this site. No price chip and no “Live now” row in the hero. The phone in the hero is a CSS still of the Hub (placeholder framing from the Direction A comp — not a capture of the live Hub). Eat In and Eat Out are the Eatery restaurant apps. Eat In keeps the in-house explanation. Eat Out is reserve a table and pre-book a meal.
 
 Desktop and mobile soft-sign stills live in [`docs/ux`](docs/ux).
 
@@ -41,21 +41,19 @@ Attach the apex `daup.co.za` only when this site is ready to replace the Flutter
 
 - www.daup.co.za — public marketing. Educate, then **Open Hub.**
 - app.daup.co.za — the Hub. Log in and registration happen there.
-- eatery.daup.co.za — the Eatery app (linked from older /apps pages, not from the homepage hero)
+- eatery.daup.co.za — Eat In, linked from the older /apps pages, not from the homepage hero
 
-**Open Hub.** and **Log in.** leave this origin and open https://app.daup.co.za (never an iframe, no query paths). There is no email field, WhatsApp field, or location field on this site.
+**Open Hub.** and **Log in.** leave this origin and open https://app.daup.co.za (never an iframe, no query paths). There is no email field, WhatsApp field, or location field on this site. There is no public walkthrough control and no public WhatsApp number.
 
-**Book a walkthrough.** opens https://wa.me/27829261373.
-
-Staff invites still resolve at /invite for links already in the wild. The homepage does not ask anyone to register.
+Staff invites still resolve at /invite for people who already have an invite. The homepage does not ask anyone to register.
 
 This site has no cookies and no /login. The older /apps page still has **Notify me.** as a local stub (`localStorage.daup.notify`). It does not write a cookie and it is not on the homepage.
 
 ## Routes
 
-- / — Direction A homepage: hero, big picture (#platform), trust tabs (#trust), app tabs (#apps), Hub CTA (#hub)
+- / — Direction A homepage: hero, big picture (#platform), trust tabs (#trust), seven app tabs (#apps), Hub CTA (#hub). The apps line is “Seven tools. One kitchen table.”
 - /privacy, /terms, /popia — short kitchen-English legal notes. No forms.
-- /apps — earlier apps index (Eatery, Your hub) kept so the path still resolves
+- /apps — earlier apps index (Eat In, Your hub) kept so the path still resolves
 - /apps/eatery
 - /apps/hub
 - /docs — shift-style walkthroughs
