@@ -1,7 +1,5 @@
 export const HUB = "https://app.daup.co.za";
 export const EATERY = "https://eatery.daup.co.za/";
-export const WHATSAPP_DISPLAY = "+27 82 926 1373";
-export const WHATSAPP = "https://wa.me/27829261373";
 
 export type Step = {
   title: string;
@@ -22,7 +20,7 @@ export const walkthroughs: Walkthrough[] = [
   {
     slug: "tuesday-lunch",
     path: "/docs/eatery/tuesday-lunch",
-    kicker: "DOCS • EATERY",
+    kicker: "DOCS • EAT IN",
     title: "Tuesday lunch service",
     sub: "Six steps. Same as a real shift.",
     steps: [
@@ -65,8 +63,8 @@ export const walkthroughs: Walkthrough[] = [
         body: "Your business lives in your hub. Start there — not on this public website.",
       },
       {
-        title: "Start with the eatery",
-        body: "Eatery first. Farm, reseller, and maker are next.",
+        title: "Start with Eat In",
+        body: "Eat In first. Farm, reseller, and maker are next.",
       },
       {
         title: "Name the place",
@@ -77,8 +75,8 @@ export const walkthroughs: Walkthrough[] = [
         body: "Staff join with a WhatsApp tap. You send it from the hub. They never sign up here.",
       },
       {
-        title: "Open the eatery",
-        body: "Floor phones open the eatery app. Tables, tickets, kitchen, stock.",
+        title: "Open Eat In",
+        body: "Floor phones open Eat In. Tables, tickets, kitchen, stock.",
       },
       {
         title: "Run the first shift",
@@ -171,16 +169,29 @@ export type AppTab = {
 
 export const appTabs: AppTab[] = [
   {
-    id: "eatery",
-    label: "Eatery",
+    id: "eat-in",
+    label: "Eat In",
     letter: "E",
     color: "#C45C26",
-    stillLabel: "Eatery · Tonight",
+    stillLabel: "Eat In · Tonight",
     body: "What’s for dinner, what’s in the fridge, and who still needs to pick up milk — without a group chat spiral.",
     rows: [
       { text: "Roast chicken & salad", meta: "Main" },
       { text: "Milk, tomatoes, bread", meta: "List · 3" },
       { text: "Leftovers: soup", meta: "Fridge" },
+    ],
+  },
+  {
+    id: "eat-out",
+    label: "Eat Out",
+    letter: "O",
+    color: "#2F4A3C",
+    stillLabel: "Eat Out · Tonight",
+    body: "Reserve a table and pre-book a meal before you leave the house.",
+    rows: [
+      { text: "Table for two", meta: "Reserved" },
+      { text: "Roast chicken", meta: "Pre-booked" },
+      { text: "Saturday dinner", meta: "Table" },
     ],
   },
   {
@@ -249,7 +260,7 @@ export const appTabs: AppTab[] = [
     rows: [
       { text: "Can you grab bread?", meta: "Sam · 18:02" },
       { text: "Already on the list.", meta: "You · 18:04" },
-      { text: "Walkthrough booked Fri.", meta: "DAUP · 17:40" },
+      { text: "Dinner at seven.", meta: "Sam · 17:40" },
     ],
   },
 ];
@@ -267,7 +278,7 @@ export const legalPages = {
     title: "Terms",
     paragraphs: [
       "www.daup.co.za is here to explain the platform. You don’t make an account on this page.",
-      "Open Hub. goes to the Hub. Book a walkthrough. goes to WhatsApp. Each app — Eatery, Vault, Finance, Trade, Project, Chat — is opened from the Hub.",
+      "Open Hub. goes to the Hub. Each app — Eat In, Eat Out, Vault, Finance, Trade, Project, and Chat — is opened from the Hub.",
       "If we can’t explain a practice in plain English at the kitchen table, we don’t do it.",
     ],
   },
@@ -276,7 +287,6 @@ export const legalPages = {
     paragraphs: [
       "DAUP is built for South African homes and businesses. You decide who sees the shopping list, the invoices, the family files.",
       "We don’t sit in the middle as the owner of your life’s paperwork. Think of it like a filing cabinet in your own kitchen — shared with the people you choose.",
-      "A question about your information? Book a walkthrough — we’ll keep it in kitchen English.",
     ],
   },
 } as const;

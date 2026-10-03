@@ -2,6 +2,8 @@
 
 Direction A is the current homepage. Cream, terracotta, and forest stay on daup-theme. Fraunces and DM Sans stay. www educates and sends people to the Hub. There is no signup form on this site.
 
+The stills in this folder are the Direction A launch frames. The page copy has since dropped the public walkthrough and the public WhatsApp number. The apps strip is seven panels: Eat In and Eat Out, then Vault, Finance, Trade, Project, and Chat. One panel shows at a time. The headline is “Seven tools. One kitchen table.”
+
 The hero phone and the app panels are CSS stills drawn to the Direction A comp. They are not captures of the live Hub. The older Eatery floor sample remains at `public/proof/eatery-floor-sample.png` and is not used on the homepage.
 
 | File | Viewport | What to read |

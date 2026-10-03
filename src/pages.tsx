@@ -69,8 +69,7 @@ export function AppsPage() {
         </p>
         <LiveCards expanded />
         <p className="caption" style={{ marginTop: 28 }}>
-          No marketplace. No trials. Open the app you run, or walk through a
-          shift in Docs.
+          No marketplace. No trials. Open the app you run.
         </p>
       </div>
     </Shell>
@@ -84,7 +83,7 @@ export function AppEateryPage() {
         <Link className="back" to="/apps">
           ‹ Apps
         </Link>
-        <h1 className="serif">Eatery</h1>
+        <h1 className="serif">Eat In</h1>
         <p className="sub">Tables, tickets, kitchen, stock.</p>
         <article className="card">
           <p>
@@ -93,11 +92,8 @@ export function AppEateryPage() {
           </p>
           <div className="card-links">
             <a className="btn btn-primary" href={EATERY}>
-              Open eatery.
+              Open Eat In.
             </a>
-            <Link className="text-link" to="/docs/eatery/tuesday-lunch">
-              Walk me through it ›
-            </Link>
           </div>
         </article>
       </div>
@@ -126,9 +122,6 @@ export function AppHubPage() {
             <a className="btn btn-primary" href={HUB}>
               Open your hub.
             </a>
-            <Link className="text-link" to="/docs/hub/set-up-eatery">
-              Walk me through it ›
-            </Link>
           </div>
         </article>
       </div>

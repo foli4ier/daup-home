@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  EATERY,
-  HUB,
-  WHATSAPP,
-  WHATSAPP_DISPLAY,
-  comingApps,
-  starters,
-} from "./content";
+import { EATERY, HUB, comingApps, starters } from "./content";
 import {
   IconBook,
   IconCloche,
@@ -84,8 +77,7 @@ export function Footer() {
             <p>One platform for South African houses and the work that runs from them.</p>
           </div>
           <div>
-            <h3>Walkthrough</h3>
-            <a href={WHATSAPP}>WhatsApp · {WHATSAPP_DISPLAY}</a>
+            <h3>Hub</h3>
             <a href={HUB}>Open Hub.</a>
           </div>
           <div>
@@ -186,7 +178,7 @@ function EateryLiveCard({
         </span>
         <div className="live-copy">
           <h3>
-            <Link to="/apps/eatery">Eatery</Link>
+            <Link to="/apps/eatery">Eat In</Link>
             <span className="live">LIVE</span>
           </h3>
           <p>
@@ -197,7 +189,7 @@ function EateryLiveCard({
         </div>
         {showOpen ? (
           <a className="btn btn-secondary btn-open" href={EATERY}>
-            Open eatery.
+            Open Eat In.
           </a>
         ) : null}
       </div>
@@ -209,9 +201,6 @@ function EateryLiveCard({
           </p>
         </div>
       ) : null}
-      <Link className="walk-link" to="/docs/eatery/tuesday-lunch">
-        Walkthrough
-      </Link>
     </article>
   );
 }
@@ -242,9 +231,6 @@ function HubLiveCard({ expanded = false }: { expanded?: boolean }) {
           </p>
         </div>
       ) : null}
-      <Link className="walk-link" to="/docs/hub/set-up-eatery">
-        Walkthrough
-      </Link>
     </article>
   );
 }

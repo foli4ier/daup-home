@@ -1,8 +1,8 @@
 import { useState, type KeyboardEvent, type ReactNode } from "react";
-import { HUB, WHATSAPP, appTabs, trustTabs, type AppTab } from "./content";
+import { HUB, appTabs, trustTabs, type AppTab } from "./content";
 
 const PHONE_APPS = [
-  { name: "Eatery", meta: "Tonight’s list", color: "#C45C26" },
+  { name: "Eat In", meta: "Tonight’s list", color: "#C45C26" },
   { name: "Vault", meta: "Your files", color: "#2F4A3C" },
   { name: "Finance", meta: "This month", color: "#8B6914" },
   { name: "Trade", meta: "Local deals", color: "#4A5568" },
@@ -48,7 +48,7 @@ function HubPhone() {
               <span>On your phone</span>
             </div>
             <div className="hub-greeting">Good evening.</div>
-            <div className="hub-hint">Six apps. One kitchen table.</div>
+            <div className="hub-hint">Seven apps. One kitchen table.</div>
             <div className="hub-apps">
               {PHONE_APPS.map((app) => (
                 <div className="app-tile" key={app.name}>
@@ -184,9 +184,6 @@ export function HomeSpine() {
               <a className="btn btn-primary btn-pill" href={HUB}>
                 Open Hub.
               </a>
-              <a className="secondary" href={WHATSAPP}>
-                Book a walkthrough.
-              </a>
             </div>
           </div>
           <HubPhone />
@@ -229,21 +226,16 @@ export function HomeSpine() {
               content: tab.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>),
             }))}
           />
-          <aside className="trust-aside">
-            <p>
-              Curious about the nuts and bolts? Ask on a walkthrough — we’ll keep it in kitchen
-              English.
-            </p>
-          </aside>
         </div>
       </section>
 
       <section className="apps-band" id="apps">
         <div className="wrap">
           <p className="section-kicker">The apps</p>
-          <h2 className="section-title">Six tools. One kitchen table.</h2>
+          <h2 className="section-title">Seven tools. One kitchen table.</h2>
           <p className="section-lead">
-            Each app does one job well. Open Hub to start; registration lives there.
+            Each app does one job well. Open Hub to start; registration lives there. Eat In and
+            Eat Out are the Eatery restaurant apps.
           </p>
           <TabSet
             label="Apps"
