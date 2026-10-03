@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import {
   AppEateryPage,
+  AppEatInPage,
+  AppEatOutPage,
   AppHubPage,
   AppsPage,
   DocsPage,
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/apps" element={<AppsPage />} />
         <Route path="/apps/eatery" element={<AppEateryPage />} />
+        <Route path="/apps/eat-in" element={<AppEatInPage />} />
+        <Route path="/apps/eat-out" element={<AppEatOutPage />} />
         <Route path="/apps/hub" element={<AppHubPage />} />
         <Route path="/docs" element={<DocsPage />} />
         <Route path="/docs/eatery/tuesday-lunch" element={<TuesdayPage />} />

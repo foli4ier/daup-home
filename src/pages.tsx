@@ -65,7 +65,7 @@ export function AppsPage() {
         </Link>
         <h1 className="serif">Apps</h1>
         <p className="sub">
-          Two live today. Farm, reseller, and maker are next — same chain.
+          Eatery, Eat In, and Eat Out. Farm, reseller, and maker are next.
         </p>
         <LiveCards expanded />
         <p className="caption" style={{ marginTop: 28 }}>
@@ -83,7 +83,7 @@ export function AppEateryPage() {
         <Link className="back" to="/apps">
           ‹ Apps
         </Link>
-        <h1 className="serif">Eat In</h1>
+        <h1 className="serif">Eatery</h1>
         <p className="sub">Tables, tickets, kitchen, stock.</p>
         <article className="card">
           <p>
@@ -92,7 +92,56 @@ export function AppEateryPage() {
           </p>
           <div className="card-links">
             <a className="btn btn-primary" href={EATERY}>
-              Open Eat In.
+              Open Eatery.
+            </a>
+          </div>
+        </article>
+      </div>
+    </Shell>
+  );
+}
+
+export function AppEatInPage() {
+  return (
+    <Shell>
+      <div className="wrap page detail">
+        <Link className="back" to="/apps">
+          ‹ Apps
+        </Link>
+        <h1 className="serif">Eat In</h1>
+        <p className="sub">Dinner, the fridge, and who picks up milk.</p>
+        <article className="card">
+          <p>
+            What’s for dinner, what’s in the fridge, and who still needs to
+            pick up milk — without a group chat spiral.
+          </p>
+          <p>You open Eat In from the Hub.</p>
+          <div className="card-links">
+            <a className="btn btn-primary" href={HUB}>
+              Open Hub.
+            </a>
+          </div>
+        </article>
+      </div>
+    </Shell>
+  );
+}
+
+export function AppEatOutPage() {
+  return (
+    <Shell>
+      <div className="wrap page detail">
+        <Link className="back" to="/apps">
+          ‹ Apps
+        </Link>
+        <h1 className="serif">Eat Out</h1>
+        <p className="sub">A table and a meal, before you leave the house.</p>
+        <article className="card">
+          <p>Reserve a table and pre-book a meal before you leave the house.</p>
+          <p>You open Eat Out from the Hub.</p>
+          <div className="card-links">
+            <a className="btn btn-primary" href={HUB}>
+              Open Hub.
             </a>
           </div>
         </article>
@@ -114,7 +163,7 @@ export function AppHubPage() {
         </p>
         <article className="card">
           <p>
-            Start the eatery from your hub. Invite tonight’s floor on WhatsApp.
+            Start Eatery from your hub. Invite tonight’s floor on WhatsApp.
             Staff do not log in on this website, and they do not join as a new
             business.
           </p>
@@ -233,7 +282,7 @@ export function InvitePage() {
             message is your login.
           </p>
           <p>
-            You land on the floor for this eatery: tables, tickets, kitchen.
+            You land on Eatery: tables, tickets, kitchen.
           </p>
           <p>Do not open the hub. That is for the owner.</p>
         </article>

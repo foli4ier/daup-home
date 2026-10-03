@@ -20,7 +20,7 @@ export const walkthroughs: Walkthrough[] = [
   {
     slug: "tuesday-lunch",
     path: "/docs/eatery/tuesday-lunch",
-    kicker: "DOCS • EAT IN",
+    kicker: "DOCS • EATERY",
     title: "Tuesday lunch service",
     sub: "Six steps. Same as a real shift.",
     steps: [
@@ -55,7 +55,7 @@ export const walkthroughs: Walkthrough[] = [
     slug: "set-up-eatery",
     path: "/docs/hub/set-up-eatery",
     kicker: "DOCS • HUB",
-    title: "Set up your eatery",
+    title: "Set up Eatery",
     sub: "Six steps. Same as a real shift.",
     steps: [
       {
@@ -63,8 +63,8 @@ export const walkthroughs: Walkthrough[] = [
         body: "Your business lives in your hub. Start there — not on this public website.",
       },
       {
-        title: "Start with Eat In",
-        body: "Eat In first. Farm, reseller, and maker are next.",
+        title: "Start with Eatery",
+        body: "Eatery first. Farm, reseller, and maker are next.",
       },
       {
         title: "Name the place",
@@ -75,8 +75,8 @@ export const walkthroughs: Walkthrough[] = [
         body: "Staff join with a WhatsApp tap. You send it from the hub. They never sign up here.",
       },
       {
-        title: "Open Eat In",
-        body: "Floor phones open Eat In. Tables, tickets, kitchen, stock.",
+        title: "Open Eatery",
+        body: "Floor phones open Eatery. Tables, tickets, kitchen, stock.",
       },
       {
         title: "Run the first shift",
@@ -98,7 +98,7 @@ export const starters = [
     kind: "people" as const,
   },
   {
-    title: "Set up your eatery",
+    title: "Set up Eatery",
     to: "/docs/hub/set-up-eatery",
     kind: "shop" as const,
   },
@@ -169,10 +169,23 @@ export type AppTab = {
 
 export const appTabs: AppTab[] = [
   {
-    id: "eat-in",
-    label: "Eat In",
+    id: "eatery",
+    label: "Eatery",
     letter: "E",
     color: "#C45C26",
+    stillLabel: "Eatery · Floor",
+    body: "Tables, tickets, kitchen, and stock — seat a table, fire a ticket, close the shift.",
+    rows: [
+      { text: "Window two-top", meta: "Seated" },
+      { text: "Ticket 14", meta: "Kitchen" },
+      { text: "Fish", meta: "86" },
+    ],
+  },
+  {
+    id: "eat-in",
+    label: "Eat In",
+    letter: "I",
+    color: "#5C4033",
     stillLabel: "Eat In · Tonight",
     body: "What’s for dinner, what’s in the fridge, and who still needs to pick up milk — without a group chat spiral.",
     rows: [
@@ -278,7 +291,7 @@ export const legalPages = {
     title: "Terms",
     paragraphs: [
       "www.daup.co.za is here to explain the platform. You don’t make an account on this page.",
-      "Open Hub. goes to the Hub. Each app — Eat In, Eat Out, Vault, Finance, Trade, Project, and Chat — is opened from the Hub.",
+      "Open Hub. goes to the Hub. Each app — Eatery, Eat In, Eat Out, Vault, Finance, Trade, Project, and Chat — is opened from the Hub.",
       "If we can’t explain a practice in plain English at the kitchen table, we don’t do it.",
     ],
   },

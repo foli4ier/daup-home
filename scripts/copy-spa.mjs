@@ -5,6 +5,8 @@ const SPA_PATHS = [
   "invite",
   "apps",
   "apps/eatery",
+  "apps/eat-in",
+  "apps/eat-out",
   "apps/hub",
   "docs",
   "docs/eatery/tuesday-lunch",
