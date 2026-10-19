@@ -1,4 +1,4 @@
-export const HUB = "https://app.daup.co.za";
+export const HUB = "https://apps.daup.co.za";
 export const EATERY = "https://eatery.daup.co.za/";
 
 export type Step = {

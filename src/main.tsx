@@ -2,10 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import { initTheme } from "./theme";
 import "daup-theme/fonts.css";
 import "daup-theme/tokens.css";
 import "./index.css";
 import "./home.css";
+import "./theme.css";
+
+initTheme();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

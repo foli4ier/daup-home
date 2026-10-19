@@ -1,0 +1,72 @@
+/*
+  Dark theme for DAUP www.
+  Remaps the daup-theme tokens under [data-theme="dark"] so every component
+  re-themes automatically. Light remains the default (no attribute = light).
+*/
+
+:root[data-theme="dark"] {
+  --cream: #0f1311;
+  --cream-deep: #0a0d0b;
+  --ink: #f3efe7;
+  --ink-soft: #d4cfc4;
+  --ink-mute: #9a948a;
+  --terracotta: #e07a43;
+  --terracotta-hover: #ef8c54;
+  --forest: #6fae92;
+  --forest-soft: #6fae92;
+  --white: #171c19;
+  --card: #161b18;
+  --muted: #9a948a;
+  --line: rgba(243, 239, 231, 0.14);
+  --chip: #1d2320;
+  --peach: #2a211b;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Theme toggle button in the nav */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  flex: 0 0 auto;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
+
+/* Smooth the flip so it doesn't jar */
+:root {
+  transition: none;
+}
+
+body,
+.site-header,
+.card,
+.sov-panel,
+.sov-app,
+.sov-tcard,
+.sov-node,
+.sov-honest-panel {
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
