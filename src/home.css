@@ -864,3 +864,351 @@ button {
 .hub-cta .btn.btn-pill:focus-visible {
   outline-color: var(--cream);
 }
+
+/* ── Data-sovereignty homepage ─────────────────────────────────── */
+
+.sov-hero {
+  padding: 4.5rem 0 3.5rem;
+  text-align: center;
+}
+
+.sov-hero .section-kicker {
+  text-align: center;
+}
+
+.sov-hero h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.35rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 auto 1.25rem;
+  color: var(--ink);
+  max-width: 16ch;
+}
+
+.sov-accent {
+  color: var(--terracotta);
+}
+
+.sov-lead {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 0 auto 2rem;
+}
+
+.sov-hero .hero-cta {
+  justify-content: center;
+}
+
+.sov-assure {
+  margin: 1.75rem auto 0;
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+}
+
+.sov-assure b {
+  color: var(--forest);
+}
+
+.sov-band {
+  background: var(--cream-deep);
+  border-block: 1px solid var(--line);
+  padding: 4rem 0;
+  scroll-margin-top: var(--header-h);
+}
+
+.sov-panel {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--forest);
+  border-radius: 14px;
+  padding: 2.25rem;
+  box-shadow: 0 8px 28px rgba(26, 26, 24, 0.06);
+}
+
+.sov-panel .section-lead {
+  max-width: 68ch;
+}
+
+.sov-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.sov-node-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 220px;
+}
+
+.sov-node {
+  flex: 1;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  height: 100%;
+}
+
+.sov-node.data {
+  border-color: color-mix(in srgb, var(--forest) 45%, var(--line));
+  background: color-mix(in srgb, var(--forest) 7%, var(--cream));
+}
+
+.sov-where {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.sov-node h4 {
+  margin: 0.4rem 0 0.4rem;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.sov-holds {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.sov-node.data .sov-holds {
+  color: var(--ink);
+}
+
+.sov-arrow {
+  color: var(--ink-mute);
+  font-size: 1.25rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 760px) {
+  .sov-arrow {
+    display: none;
+  }
+  .sov-node-row {
+    min-width: 100%;
+  }
+}
+
+.sov-apps {
+  background: var(--cream);
+  padding: 4.5rem 0;
+  scroll-margin-top: var(--header-h);
+}
+
+.sov-apps .section-lead {
+  max-width: 60ch;
+  margin-bottom: 2.5rem;
+}
+
+.sov-tier {
+  margin-bottom: 2.25rem;
+}
+
+.sov-tier-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin: 0 0 1rem;
+  flex-wrap: wrap;
+}
+
+.sov-tier-label h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+
+.sov-tag {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.tag-social {
+  background: color-mix(in srgb, var(--forest) 12%, var(--cream));
+  color: var(--forest);
+  border: 1px solid color-mix(in srgb, var(--forest) 40%, transparent);
+}
+
+.tag-sme {
+  background: color-mix(in srgb, var(--terracotta) 10%, var(--cream));
+  color: var(--terracotta-hover);
+  border: 1px solid color-mix(in srgb, var(--terracotta) 40%, transparent);
+}
+
+.tag-ent {
+  background: color-mix(in srgb, var(--ink) 8%, var(--cream));
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+}
+
+.tag-sub {
+  background: color-mix(in srgb, var(--ink) 5%, var(--cream));
+  color: var(--ink-mute);
+  border: 1px solid var(--line);
+}
+
+.sov-note {
+  color: var(--ink-mute);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+.sov-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.85rem;
+}
+
+.sov-app {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.1rem;
+  transition: border-color 0.15s ease, transform 0.12s ease;
+}
+
+.sov-app:hover {
+  border-color: color-mix(in srgb, var(--forest) 40%, var(--line));
+  transform: translateY(-2px);
+}
+
+.sov-app-ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.15rem;
+  background: color-mix(in srgb, var(--ink) 4%, var(--cream));
+  border: 1px solid var(--line);
+  margin-bottom: 0.75rem;
+}
+
+.sov-app h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.sov-app p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.sov-app.live {
+  border-color: color-mix(in srgb, var(--terracotta) 45%, var(--line));
+}
+
+.sov-live {
+  color: var(--terracotta);
+}
+
+.sov-trust {
+  background: var(--cream-deep);
+  border-block: 1px solid var(--line);
+  padding: 4.5rem 0;
+  scroll-margin-top: var(--header-h);
+}
+
+.sov-trust .section-lead {
+  max-width: 58ch;
+  margin-bottom: 2.25rem;
+}
+
+.sov-tgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+
+.sov-tcard {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem;
+}
+
+.sov-tn {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--forest) 10%, var(--cream));
+  border: 1px solid color-mix(in srgb, var(--forest) 40%, transparent);
+  color: var(--forest);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.sov-tcard h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.sov-tcard p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.sov-honest {
+  background: var(--cream);
+  padding: 3.5rem 0 4.5rem;
+}
+
+.sov-honest-panel {
+  background: color-mix(in srgb, var(--terracotta) 7%, var(--cream));
+  border: 1px solid color-mix(in srgb, var(--terracotta) 35%, transparent);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.sov-honest-panel h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+  color: var(--terracotta-hover);
+  font-family: var(--serif);
+  font-weight: 600;
+}
+
+.sov-honest-panel ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.sov-honest-panel li {
+  margin: 0.5rem 0;
+}
+
+.sov-honest-panel li b {
+  color: var(--ink);
+}

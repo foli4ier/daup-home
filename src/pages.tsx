@@ -18,7 +18,7 @@ function Shell({
   title?: string;
 }) {
   useEffect(() => {
-    document.title = title ?? "DAUP — Your house runs on one platform.";
+    document.title = title ?? "DAUP — Your data, on your node.";
   }, [title]);
 
   return (

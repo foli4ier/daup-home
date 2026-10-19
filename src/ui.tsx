@@ -32,8 +32,8 @@ export function Nav() {
           DAUP
         </Link>
         <nav className={open ? "nav open" : "nav"} id="main-nav" aria-label="Primary">
-          <Link to="/#platform" onClick={() => setOpen(false)}>
-            Platform
+          <Link to="/#sovereign" onClick={() => setOpen(false)}>
+            Data sovereignty
           </Link>
           <Link to="/#trust" onClick={() => setOpen(false)}>
             Trust
